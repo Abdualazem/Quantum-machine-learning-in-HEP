@@ -1,0 +1,17 @@
+# Notebook requirements
+pandas
+qiskit
+qiskit-machine-learning
+qiskit[visualization]
+scikit-learn
+scipy
+uproot
+
+# Documentation
+Sphinx
+myst-nb
+sphinx-book-theme
+
+# Jupyter
+jupyterlab
+jupyterlab-myst
