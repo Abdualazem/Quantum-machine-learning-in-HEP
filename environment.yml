@@ -1,0 +1,14 @@
+name: qml
+channels:
+  - defaults
+dependencies:
+  - python==3.8.*
+  - pip
+  - pip:
+    - pandas
+    - qiskit
+    - qiskit-machine-learning
+    - qiskit[visualization]
+    - scikit-learn
+    - scipy
+    - uproot
