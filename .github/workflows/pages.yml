@@ -18,5 +18,41 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.8"
+      - name: Fetch pip cache
+        uses: actions/cache@v3
+        with:
+          key: |
+            pip-doc-${{runner.os}}-${{hashFiles('requirements.txt')}}
+          restore-keys: |
+            pip-doc-${{runner.os}}
+            pip-doc
+          path: ~/.cache/pip/
+      - name: Fetch Jupyter cache
+        uses: actions/cache@v3
+        with:
+          key: |
+            jupyter-cache-${{runner.os}}-${{hashFiles('requirements.txt', 'Makefile', '**.ipynb')}}
+          restore-keys: |
+            jupyter-cache-${{runner.os}}
+            jupyter-cache
+          path: _build/.jupyter_cache/
       - run: pip install -r requirements.txt
       - run: make html
+      - uses: actions/upload-pages-artifact@v1
+        if: ${{ always() }}
+        with:
+          path: _build/html
+
+  gh-pages:
+    name: Upload to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: github.event_name != 'pull_request'
+    needs: documentation
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/deploy-pages@v1
