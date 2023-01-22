@@ -11,6 +11,7 @@ exclude_patterns = [
 ]
 extensions = [
     "myst_nb",
+    "sphinx.ext.githubpages",
 ]
 html_theme = "sphinx_book_theme"
 myst_enable_extensions = [
