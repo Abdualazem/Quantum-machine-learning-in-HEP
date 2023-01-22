@@ -12,3 +12,8 @@ dependencies:
     - scikit-learn
     - scipy
     - uproot
+    # Documentation
+    - Sphinx
+    - myst-nb
+    # Jupyter
+    - jupyterlab
