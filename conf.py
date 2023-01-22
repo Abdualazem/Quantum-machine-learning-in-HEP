@@ -18,3 +18,4 @@ myst_enable_extensions = [
     "dollarmath",
     "html_image",
 ]
+nb_execution_mode = "cache"
