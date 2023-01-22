@@ -1,4 +1,4 @@
 .ipynb_checkpoints/
 _build/
-images/
+images/*.png
 tmpData/
