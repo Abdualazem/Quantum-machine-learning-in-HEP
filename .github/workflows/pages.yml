@@ -22,3 +22,5 @@ jobs:
       - run: make html
       - uses: actions/upload-pages-artifact@v1
         if: ${{ always() }}
+        with:
+          path: _build/html
