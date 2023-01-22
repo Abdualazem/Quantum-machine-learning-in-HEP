@@ -32,3 +32,17 @@ jobs:
         if: ${{ always() }}
         with:
           path: _build/html
+
+  gh-pages:
+    name: Upload to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: github.event_name != 'pull_request'
+    needs: documentation
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/deploy-pages@v1
