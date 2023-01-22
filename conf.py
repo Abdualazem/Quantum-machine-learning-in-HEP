@@ -12,4 +12,8 @@ exclude_patterns = [
 extensions = [
     "myst_nb",
 ]
-html_theme = 'alabaster'
+html_theme = "sphinx_book_theme"
+myst_enable_extensions = [
+    "amsmath",
+    "dollarmath",
+]

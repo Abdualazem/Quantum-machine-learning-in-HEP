@@ -15,5 +15,6 @@ dependencies:
     # Documentation
     - Sphinx
     - myst-nb
+    - sphinx-book-theme
     # Jupyter
     - jupyterlab
