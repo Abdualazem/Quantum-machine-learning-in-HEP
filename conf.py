@@ -16,4 +16,5 @@ html_theme = "sphinx_book_theme"
 myst_enable_extensions = [
     "amsmath",
     "dollarmath",
+    "html_image",
 ]

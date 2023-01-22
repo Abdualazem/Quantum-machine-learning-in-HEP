@@ -18,3 +18,4 @@ dependencies:
     - sphinx-book-theme
     # Jupyter
     - jupyterlab
+    - jupyterlab-myst
