@@ -3,6 +3,7 @@ pandas
 qiskit
 qiskit-machine-learning
 qiskit[visualization]
+qiskit-aer
 scikit-learn
 scipy
 uproot
