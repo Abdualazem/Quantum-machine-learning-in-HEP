@@ -1,21 +1,35 @@
 # Quantum Machine Learning Tutorial
 
-## How to set up?
+## Quick start
 
-Install all the required packages with Conda ([Miniconda](https://docs.conda.io/en/latest/miniconda.html)) as follows:
+1) Create the conda env (Python 3.8):
 
-```shell
-conda env create
+```bash
+conda env create -f environment.yml
+conda activate qml
 ```
 
-You can now build the documentation by running:
+1) Install wheels (skips building qiskit-aer from source):
 
+```bash
+pip install --upgrade pip
+pip install --only-binary=:all: "qiskit-aer==0.15.1"
+pip install -r requirements.txt --no-build-isolation --only-binary=qiskit-aer
 ```
+
+1) Build the docs:
+
+```bash
 make html
 ```
 
-Notebooks are best edited in [Jupyter Lab](https://jupyterlab.readthedocs.io) as follows:
+1) Explore the notebooks:
 
-```shell
+```bash
 jupyter lab
 ```
+
+## Troubleshooting
+
+- If `myst_nb` is missing, re-check that `conda activate qml` was run before `make html`.
+- If `qiskit-aer` tries to compile, ensure the `--only-binary` install step above ran without errors.
